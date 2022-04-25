@@ -470,7 +470,7 @@ void StageNode::WorldCallback() {
         //
 
         if (this->positionmodels[r]->Stalled()) {
-            ROS_WARN("collision happen!");
+            ROS_WARN_THROTTLE(5, "collision happen!");
             // publish a msg let other know collision is happen
             std_msgs::Empty msg;
             collision_pub_.publish(msg);
